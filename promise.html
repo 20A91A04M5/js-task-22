@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8-11-24</title>
+</head>
+<body>
+    <p>Today's Technical Task is to create 3 promises with different examples!!</p>
+
+    <p id="p1"></p>
+    <h1 id="head"></h1>
+
+    <script>
+        // ---------promises-----------///
+        let s="tirumala"
+        let t="prasad"
+        let pro=new Promise((sol,rej)=>{
+
+            if(s=="tirumala" && t=="prasad"){
+                sol("login sucessfull")
+            }
+            else{
+                rej("invalid")
+            }
+        })
+        pro.then((msg)=>{
+            console.log(msg)
+        }).finally((msg)=>{
+            console.log("your welcome")
+        }).catch((msg)=>{
+            console.log(msg)
+        })
+
+        function myDisplayer(some) {
+        document.getElementById("p1").innerHTML = some;
+        }
+        let myPromise = new Promise(function(myResolve, myReject) {
+        let x = prompt("enter number lass than 10 or greater than 10:-")
+        if (x <= 10) {
+            myResolve("X is less then the 10");
+        } else {
+            myReject("X is greater then the 10");
+        }
+        });
+
+        myPromise.then(
+        function(value) {myDisplayer(value);},
+        function(error) {myDisplayer(error);}
+        );
+
+        function Display(soo) {
+        document.getElementById("head").innerText = soo;
+        }
+
+        let proo=new Promise((solve,reject)=>{
+            let x=prompt("enter selected yes or not:-")
+            if(x=="yes"){
+            setTimeout(()=>{
+                solve("You are Selected")
+            },2000)
+            }else{
+                reject("sorry for regret")
+            }
+        });
+        proo.then((msgs)=>{
+            Display(msgs)
+        }).catch((msgs)=>{
+            Display(msgs)
+        })
+
+
+
+
+    </script>
+</body>
+</html>
